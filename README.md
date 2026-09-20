@@ -4,7 +4,7 @@ A Python analyzer for cartridge frequency response, harmonic distortion, and cro
 
 V2 is intended for laboratory-style analysis of digitized TRS-1007 sweeps. It detects the 1 kHz pilot sections in a continuous stereo capture, identifies the following left- or right-driven sweep, fits the logarithmic sweep trajectory, measures the fundamental plus HD2/HD3, applies the TRS-1007 high-frequency compensation when appropriate, and produces a combined SJPlot-style graph.
 
-![Example output](examples/example_output.png)
+![Example output](examples/example_output_v2.png)
 
 ## What V2 measures
 
