@@ -172,19 +172,59 @@ This repository is intended as an engineering/measurement tool, not as an offici
 
 MIT. See [LICENSE](LICENSE).
 
-## Suggested GitHub repository
+## Get the project from GitHub
+
+The project repository is:
 
 `https://github.com/cport101/jvc-trs1007-analyzer`
 
-After creating an empty repository under the `cport101` account, from this directory:
+### First-time installation
+
+Customers downloading the project for the first time should clone the repository, then enter the project directory:
 
 ```bash
-git init
-git branch -M main
-git add .
-git commit -m "Initial release: JVC TRS-1007 Analyzer V2"
-git remote add origin https://github.com/cport101/jvc-trs1007-analyzer.git
-git push -u origin main
+git clone https://github.com/cport101/jvc-trs1007-analyzer.git
+cd jvc-trs1007-analyzer
 ```
 
-If GitHub HTTPS authentication is used from the command line, use GitHub's currently supported authentication method rather than an account password.
+Create a Python virtual environment and install the required packages:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+On Windows PowerShell, activate the environment with:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+### Pull the latest version
+
+If the repository has already been cloned, customers can update their local copy by entering the project directory and pulling the current `main` branch:
+
+```bash
+cd jvc-trs1007-analyzer
+git pull origin main
+```
+
+If the virtual environment is not already active, activate it before running the analyzer. After an update, it is also safe to refresh the dependencies:
+
+```bash
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+Then run the analyzer normally, for example:
+
+```bash
+python3 jvc_trs1007_analyzer.py recording.wav \
+  --band auto \
+  --cartridge "Cartridge Name" \
+  --output result.png
+```
+
+`git pull` is for updating an existing local checkout. For a first-time download, use `git clone` as shown above.
